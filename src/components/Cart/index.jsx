@@ -9,11 +9,11 @@ function Cart () {
     const [cart, setCart] = useState(data)
 
     const products = cart.map((product) => {
-        return <Product product={product} />
+        return <Product product={product} key={product.id}/>
     }) 
 
     console.log(cart)
-     
+      
     return ( 
         <section className="cart">
             <CartHeader />
