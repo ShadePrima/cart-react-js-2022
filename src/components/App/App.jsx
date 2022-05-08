@@ -1,6 +1,9 @@
+import Title from "../Title";
 import "./_base.scss"
 import "./_reset.scss"
 import "./_vars.scss"
+import "./_section-cart.scss"
+
 
 
 function App() {
@@ -8,9 +11,7 @@ function App() {
     <section className="section-cart">
         <header className="section-cart__header">
             <div className="container">
-                <h1 className="title-1">
-                    Cart of goods
-                </h1>
+              <Title />
             </div>
           
         </header>
