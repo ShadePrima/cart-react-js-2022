@@ -3,13 +3,14 @@ import Count from "../Count";
 import "./style.scss"
 
 const Product = ({product}) => {
+    const {img, title, prise, count, id} = product
     return ( 
         <section className="product">
         <div className="product__img">
-            <img src="./img/products/Computer.jpg" alt="Apple MacBook Air 13" />                            
+            <img src={`./img/products/${img}`} alt={title} />                            
         </div>
         <div className="product__title">
-            {product.title}
+            {title}
         </div>
 
         <div className="product__count">
@@ -17,7 +18,7 @@ const Product = ({product}) => {
         </div> 
 
         <div className="product__price">
-            {product.prise} $
+            {prise} $
         </div>
         <div className="product__control">
             <ButtonDelete />
