@@ -1,9 +1,9 @@
-const ButtonDelete = () => {
+const ButtonDelete = ({deleteProduct, id}) => {
     return (  
-        <button type="button">
+        <button type="button" onClick={() => {deleteProduct(id)}}>
             <img src="./img/icons/x.jpg" alt="Delete" />
         </button>
     );
 }
  
-export default ButtonDelete;
+export default ButtonDelete; 
