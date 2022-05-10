@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartFooter from "../CartFooter";
 import CartHeader from "../CartHeader";
 import Product from "../Product";
@@ -14,6 +14,13 @@ function Cart () {
         count: cart.reduce((prev, curr) => {return prev + curr.count}, 0)
  
     })
+
+    useEffect(() => {
+        setTotal({             
+        price: cart.reduce((prev, curr) => { return prev + curr.priceTotal}, 0), 
+        count: cart.reduce((prev, curr) => {return prev + curr.count}, 0)
+        })
+    }, [cart])
 
     const deleteProduct =  (id) => { 
 
