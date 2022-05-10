@@ -1,10 +1,17 @@
 import "./style.scss"
 
-const Count = ({count, increase, decrease, id}) => {
+const Count = ({count, increase, decrease, changeValue, id}) => {
     return ( 
         <div className="count">
                 <div className="count__box">
-                    <input type="number" className="count__input" min="1" max="100" value={count} />                                    
+                    <input 
+                        type="number" 
+                        className="count__input" 
+                        min="1" 
+                        max="100" 
+                        value={count}
+                        onChange={(e) => {changeValue(id, +e.target.value)}}
+                    />                                    
                 </div>
                 <div className="count__controls">
                     <button type="button" className="count__up" onClick={() => {increase(id)}}>
@@ -18,4 +25,4 @@ const Count = ({count, increase, decrease, id}) => {
     );
 }
  
-export default Count;
+export default Count; 

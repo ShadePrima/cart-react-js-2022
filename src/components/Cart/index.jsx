@@ -49,6 +49,21 @@ function Cart () {
 
     } 
 
+    const changeValue = (id, value) => {
+        setCart((cart) => {
+            return cart.map((product) => {
+                if (product.id === id) {
+                    return {
+                         ...product,
+                        count: value,
+                        priceTotal: value * product.price
+                    }
+                }
+                return product
+            })
+        })
+    } 
+
     const products = cart.map((product) => {
         return (
             <Product 
@@ -57,11 +72,11 @@ function Cart () {
                 deleteProduct = {deleteProduct}
                 increase={increase}
                 decrease={decrease}
+                changeValue={changeValue}
             />)
     }) 
 
-    console.log(cart)
-      
+     
     return ( 
         <section className="cart">
             <CartHeader />
