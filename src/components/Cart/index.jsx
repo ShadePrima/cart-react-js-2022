@@ -8,6 +8,13 @@ function Cart () {
 
     const [cart, setCart] = useState(data)
 
+    const [total, setTotal] = useState({
+
+        price: cart.reduce((prev, curr) => { return prev + curr.priceTotal}, 0), 
+        count: cart.reduce((prev, curr) => {return prev + curr.count}, 0)
+ 
+    })
+
     const deleteProduct =  (id) => { 
 
         setCart((cart) => {
@@ -81,7 +88,9 @@ function Cart () {
         <section className="cart">
             <CartHeader />
             {products}
-            <CartFooter />
+            <CartFooter 
+                total={total}
+            />
         </section>
      );
 }

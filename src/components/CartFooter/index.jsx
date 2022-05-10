@@ -1,12 +1,13 @@
 import "./style.scss"
 
-const CartFooter = () => {
+const CartFooter = ({total}) => {
+    const{count, price} = total
     return ( 
         <footer className="cart-footer">
-        <div className="cart-footer__count">3 items</div>
-        <div className="cart-footer__prise"> 6000 $</div>                      
+        <div className="cart-footer__count"> {count} items</div>
+        <div className="cart-footer__prise"> {price} $</div>                      
     </footer>
      );
-}
+} 
  
-export default CartFooter;
+export default CartFooter; 
