@@ -15,12 +15,32 @@ function Cart () {
         })
     }
 
+    const increase = (id) => { 
+        console.log('Increase111', id)
+
+        setCart((cart) => {
+            return cart.map((product) => {
+                if (product.id === id) {
+                    return {
+                        ...product,
+                        count: ++product.count,
+                        priceTotal: product.count * product.priceTotal
+                    }
+                }
+                return product
+      
+            })
+        })
+
+    } 
+
     const products = cart.map((product) => {
         return (
             <Product 
                 product={product} 
                 key={product.id}
                 deleteProduct = {deleteProduct}
+                increase={increase}
             />)
     }) 
 

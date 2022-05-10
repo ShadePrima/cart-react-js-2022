@@ -4,8 +4,8 @@ const cart = [
         img: 'Computer.jpg',
         title: 'Apple MacBook Air 13',
         count: 1,
-        prise: 2000,
-        priseTotal: 2000,
+        price: 2000,
+        priceTotal: 2000,
     },
 
     {
@@ -13,8 +13,8 @@ const cart = [
         img: 'Apple watch.jpg',
         title: 'Apple watch',
         count: 1,
-        prise: 1000,
-        priseTotal: 1000,
+        price: 1000,
+        priceTotal: 1000,
     },
 
     {
@@ -22,8 +22,8 @@ const cart = [
         img: 'Mac Pro.jpg',
         title: 'Mac Pro',
         count: 1,
-        prise: 3000,
-        priseTotal: 3000,
+        price: 3000,
+        priceTotal: 3000,
     }
 ]
 
